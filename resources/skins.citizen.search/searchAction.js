@@ -74,7 +74,7 @@ function searchAction() {
 			} );
 		},
 		clear: function ( typeaheadEl ) {
-			typeaheadEl.querySelector( '.citizen-typeahead-item-group[data-group="action"]' ).remove();
+			htmlHelper.removeItemGroup( typeaheadEl, 'action' );
 		}
 	};
 }

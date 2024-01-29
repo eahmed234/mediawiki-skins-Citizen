@@ -2,7 +2,7 @@ const config = require( './config.json' );
 const htmlHelper = require( './htmlHelper.js' )();
 const searchHistory = require( './searchHistory.js' )( config );
 
-function presult() {
+function searchPresults() {
 	return {
 		elements: undefined,
 		addSearchHistory: function ( fragment ) {
@@ -61,5 +61,5 @@ function presult() {
 	};
 }
 
-/** @module presult */
-module.exports = presult;
+/** @module searchPresults */
+module.exports = searchPresults;

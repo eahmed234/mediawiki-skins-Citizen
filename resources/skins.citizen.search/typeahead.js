@@ -6,10 +6,10 @@ const
 const config = require( './config.json' );
 
 const htmlHelper = require( './htmlHelper.js' )();
-const presult = require( './presult.js' )();
-const searchAction = require( './searchAction.js' )();
+const searchPresults = require( './searchPresults.js' )();
 const searchClient = require( './searchClient.js' )( config );
 const searchHistory = require( './searchHistory.js' )( config );
+const searchResults = require( './searchResults.js' )();
 const searchQuery = require( './searchQuery.js' )();
 
 const typeahead = {
@@ -298,7 +298,7 @@ const typeahead = {
 
 		searchHistory.init();
 
-		presult.render( this.element );
+		searchPresults.render( this.element );
 		// Init the value in case of undef error
 		typeahead.items.set();
 
@@ -445,13 +445,13 @@ function getSuggestions() {
  */
 function updateTypeaheadItems() {
 	if ( searchQuery.isValid ) {
-		presult.clear( typeahead.element );
-		searchAction.render( typeahead.element, searchQuery );
+		searchPresults.clear( typeahead.element );
+		searchResults.render( typeahead.element, searchQuery );
 		getSuggestions();
 	} else {
-		searchAction.clear( typeahead.element );
+		searchResults.clear( typeahead.element );
 		typeahead.items.clear();
-		presult.render( typeahead.element );
+		searchPresults.render( typeahead.element );
 		typeahead.items.set();
 	}
 }
