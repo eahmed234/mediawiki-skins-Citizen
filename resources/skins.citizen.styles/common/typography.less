@@ -33,7 +33,7 @@ blockquote {
 	font-style: italic;
 
 	cite {
-		font-size: 0.8125rem;
+		font-size: var( --font-size-x-small );
 		font-style: normal;
 	}
 }
@@ -41,6 +41,27 @@ blockquote {
 sub,
 sup {
 	font-size: 80%;
+}
+
+em {
+	:lang( ja ) &,
+	:lang( ko ) &,
+	:lang( mn ) &,
+	:lang( zh ) & {
+		/* CJK languages do not use italics for emphasis */
+		font-style: normal;
+		text-emphasis: filled;
+	}
+
+	:lang( ja ) &,
+	:lang( ko ) &,
+	:lang( mn ) & {
+		text-emphasis-position: over right;
+	}
+
+	:lang( zh ) & {
+		text-emphasis-position: under right;
+	}
 }
 
 .mw-logo-wordmark {

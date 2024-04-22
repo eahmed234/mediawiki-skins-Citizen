@@ -9,25 +9,31 @@
  */
 
 .mw-scribunto-console-fieldset {
-	font-size: 0.875rem;
+	font-size: var( --font-size-small );
 	color: var( --color-base );
 
 	input[ type='button' ] {
 		width: 100%;
 		padding: var( --space-xs ) var( --space-sm );
-		font-weight: var( --font-weight-semibold );
+		margin: var( --space-xs ) 0;
+		font-weight: var( --font-weight-medium );
+		color: #fff;
 		cursor: pointer;
-		border-top: 0;
-		border-bottom-right-radius: var( --border-radius--small );
-		border-bottom-left-radius: var( --border-radius--small );
+		background-color: var( --color-destructive );
+		border-radius: var( --border-radius--small );
 
 		&:hover {
-			background: var( --color-surface-2--hover );
+			background: var( --color-destructive--hover );
 		}
 
 		&:active {
-			background: var( --color-surface-2--active );
+			background: var( --color-destructive--active );
 		}
+	}
+
+	> div:last-child {
+		position: sticky;
+		bottom: 0;
 	}
 }
 
@@ -52,12 +58,16 @@
 	border-top: 1px solid var( --border-color-base );
 }
 
+#mw-scribunto-output {
+	font-family: var( --font-family-monospace );
+	font-size: var( --font-size-x-small );
+}
+
 #mw-scribunto-input {
 	color: var( --color-base--emphasized );
 	background-color: transparent;
 	border: 1px solid var( --border-color-base );
-	border-top-left-radius: var( --border-radius--small );
-	border-top-right-radius: var( --border-radius--small );
+	border-radius: var( --border-radius--small );
 
 	&:hover {
 		border-color: var( --color-primary--hover );

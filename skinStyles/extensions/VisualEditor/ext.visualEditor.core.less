@@ -185,11 +185,13 @@
 }
 
 /* ve.ui.FindAndReplaceDialog.css */
-/*
 .ve-ui-findAndReplaceDialog-findResult > div {
-	background: #28bb0b;
+	background: var( --color-syntax-yellow );
 }
-*/
+
+.ve-ui-findAndReplaceDialog-findResult-focused > div {
+	background: var( --color-syntax-orange );
+}
 
 /* ve.ui.SpecialCharacterDialog.css */
 .ve-ui-specialCharacterPage h3 {
@@ -270,6 +272,11 @@
 	background-color: var( --color-surface-0 );
 	// Remove default box shadow
 	box-shadow: none;
+}
+
+/* ve.ui.ToolbarDialog.css */
+.ve-ui-toolbarDialog {
+	background-color: var( --color-surface-0 );
 }
 
 /* ve.ui.TableLineContext.css */
